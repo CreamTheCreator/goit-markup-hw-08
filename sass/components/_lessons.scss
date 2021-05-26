@@ -1,5 +1,13 @@
+@media screen and (max-width: $desktop - 1px) {
+  .lessons {
+    display: none;
+  }
+}
 .position {
   position: relative;
+  &:not(:first-child) {
+    margin-left: 30px;
+  }
 }
 .lessons__tumb {
   @extend %flex;
@@ -22,16 +30,31 @@
 .features,
 .client,
 .team {
-  @include pad(94px, 94px);
+  @include pad(30px, 30px);
+  @media screen and (min-width: $mobile) {
+    @include pad(60px, 60px);
+  }
+  @media screen and (min-width: $desktop) {
+    @include pad(94px, 94px);
+  }
 }
 .lessons {
-  padding-bottom: 94px;
+  padding-bottom: 60px;
+
+  @media screen and (min-width: $desktop) {
+    padding-bottom: 94px;
+  }
 }
 .text {
-  margin-bottom: 50px;
+  margin-bottom: 30px;
   font-weight: 700;
-  font-size: 36px;
+  font-size: 28px;
   line-height: 1.17;
   text-align: center;
   color: $title-text-color;
+
+  @media screen and (min-width: $desktop) {
+    margin-bottom: 50px;
+    font-size: 36px;
+  }
 }

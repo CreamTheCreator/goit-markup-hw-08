@@ -19,45 +19,68 @@
 
   <body>
     <!-- header -->
-    <!-- <header class="header">
-      <div class="container list">
+    <header class="header">
+      <div class="container list mob__list">
         <a class="header__studio link" href="./index.html"><span class="header__web">Web</span>Studio</a>
-        <nav class="header__nav">
-          <ul class="header__list">
-            <li class="header__item">
-              <a class="header__link primary" href="./index.html">Студия</a>
+        <button
+          class="mob__btn link"
+          type="button"
+          aria-expanded="false"
+          aria-controls="menu__cotainer"
+          data-menu-button
+        >
+          <svg width="40" height="40" aria-label="Переключатель мобильного меню">
+            <use class="icon__close" href="/icons/sprite.svg#icon-close_40px"></use>
+            <use class="icon__menu" href="./icons/sprite.svg#icon-menu_40px"></use>
+          </svg>
+        </button>
+        <div class="menu__cotainer" id="menu__cotainer" data-menu>
+          <nav class="header__nav">
+            <ul class="header__list">
+              <li class="header__item">
+                <a class="header__link primary" href="./index.html">Студия </a>
+              </li>
+              <li class="header__item">
+                <a class="header__link link" href="./portfolio.html">Портфолио</a>
+              </li>
+              <li class="header__item">
+                <a class="header__link link" href="">Контакты</a>
+              </li>
+            </ul>
+          </nav>
+          <ul class="header__menu">
+            <li class="menu__item header__mail">
+              <a class="header__addr link" href="mailto:info@devstudio.com">
+                <svg class="header__icon icon__mail" width="16" height="12">
+                  <use href="./icons/mailtel.svg#icon-envelope"></use>
+                </svg>
+                info@devstudio.com
+              </a>
             </li>
-            <li class="header__item">
-              <a class="header__link link" href="./portfolio.html">Портфолио</a>
-            </li>
-            <li class="header__item">
-              <a class="header__link link" href="">Контакты</a>
+            <li class="menu__item header__tel">
+              <a class="menu__addr link" href="tel:+380961111111">
+                <svg class="header__icon icon__tel">
+                  <use href="./icons/mailtel.svg#icon-vector"></use>
+                </svg>
+                +38 096 111 11 11
+              </a>
             </li>
           </ul>
-        </nav>
-        <ul class="header__list header__menu">
-          <li class="header__item">
-            <a class="header__addr link" href="mailto:info@devstudio.com">
-              <svg class="header__icon" width="16" height="12">
-                <use href="./icons/mailtel.svg#icon-envelope"></use>
-              </svg>
-              info@devstudio.com
-            </a>
-          </li>
-          <li class="header__item">
-            <a class="header__addr link" href="tel:+380961111111">
-              <svg class="header__icon" width="10" height="16">
-                <use href="./icons/mailtel.svg#icon-vector"></use>
-              </svg>
-              +38 096 111 11 11
-            </a>
-          </li>
-        </ul>
+          <div class="net__list">
+            <ul class="net list">
+              <li class="net__item"><a class="net__link link" href="">Instagram</a></li>
+              <li class="net__item"><a class="net__link link" href="">Twitter</a></li>
+              <li class="net__item"><a class="net__link link" href="">Facebook</a></li>
+              <li class="net__item"><a class="net__link link" href="">LinkedIn</a></li>
+            </ul>
+          </div>
+        </div>
       </div>
-    </header> -->
+    </header>
+
+    <!-- main section -->
     <main>
-      <!-- main section -->
-      <section class="container hero">
+      <section class="hero">
         <h1 class="hero__heading">Эффективные решения для вашего бизнеса</h1>
         <button class="hero__button" type="button" data-modal-open>Заказать услугу</button>
       </section>
@@ -65,8 +88,8 @@
       <section class="features">
         <div class="container">
           <h2 class="visually-hidden">Features</h2>
-          <ul class="list">
-            <li class="list__item">
+          <ul class="features__list list">
+            <li class="features__item">
               <div class="features__icon">
                 <svg class="icon">
                   <use href="./icons/sprite.svg#icon-antenna"></use>
@@ -77,7 +100,7 @@
                 Идейные соображения, а также начало повседневной работы по формированию позиции.
               </p>
             </li>
-            <li class="list__item">
+            <li class="features__item">
               <div class="features__icon">
                 <svg class="icon">
                   <use href="./icons/sprite.svg#icon-clock"></use>
@@ -88,7 +111,7 @@
                 Задача организации, в особенности же рамки и место обучения кадров влечет за собой.
               </p>
             </li>
-            <li class="list__item">
+            <li class="features__item">
               <div class="features__icon">
                 <svg class="icon">
                   <use href="./icons/sprite.svg#icon-diagram"></use>
@@ -99,7 +122,7 @@
                 Равным образом консультация с широким активом в значительной степени обуславливает.
               </p>
             </li>
-            <li class="list__item">
+            <li class="features__item">
               <div class="features__icon">
                 <svg class="icon">
                   <use href="./icons/sprite.svg#icon-astronaut"></use>
@@ -114,40 +137,60 @@
         </div>
       </section>
       <!-- we-do section -->
-      <!-- <section class="lessons">
+      <section class="lessons">
         <div class="container">
           <h2 class="text">Чем мы занимаемся</h2>
 
-          <ul class="list">
+          <ul class="list lessons__list">
             <li class="list__item position">
-              <img src="./images/box1.jpg" alt="Компьютер" width="370" />
-              <div class="lessons__tumb">
-                <h3 class="lessons__heiding">Десктопные приложения</h3>
-              </div>
+              <img
+                srcset="./images/box/box-img1.jpg 1x, ./images/box/box-img1@2x.jpg 2x"
+                src="./images/box/box-img1.jpg"
+                alt="фото рабочего места"
+              />
+              <div class="lessons__tumb"><h3 class="lessons__heiding">Десктопные приложения</h3></div>
             </li>
             <li class="list__item position">
-              <img src="./images/box2.jpg" alt="Телефон" width="370" />
-              <div class="lessons__tumb">
-                <h3 class="lessons__heiding">Мобильные приложения</h3>
-              </div>
+              <img
+                srcset="./images/box/box-img2.jpg 1x, ./images/box/box-img2@2x.jpg 2x"
+                src="./images/box/box-img2.jpg"
+                alt="фото рабочего места"
+              />
+              <div class="lessons__tumb"><h3 class="lessons__heiding">Мобильные приложения</h3></div>
             </li>
             <li class="list__item position">
-              <img src="./images/box3.jpg" alt="Планшет" width="370" />
-              <div class="lessons__tumb">
-                <h3 class="lessons__heiding">Дизайнерские решения</h3>
-              </div>
+              <img
+                srcset="./images/box/box-img3.jpg 1x, ./images/box/box-img3@2x.jpg 2x"
+                src="./images/box/box-img3.jpg"
+                alt="фото рабочего места"
+              />
+              <div class="lessons__tumb"><h3 class="lessons__heiding">Дизайнерские решения</h3></div>
             </li>
           </ul>
         </div>
-      </section> -->
+      </section>
       <!-- team section -->
-      <!-- <section class="team">
+      <section class="team">
         <div class="container">
           <h2 class="text">Наша команда</h2>
 
-          <ul class="list">
+          <ul class="list team__assemb">
             <li class="list__item team__item">
-              <img src="./images/team/img1.jpg" alt="Игорь Демьяненко" width="270" />
+              <picture>
+                <source
+                  srcset="./images/team/desctop/img-1.jpg 1x, ./images/team/desctop/img-1@2x.jpg 2x"
+                  media="(min-width: 1200px)"
+                />
+                <source
+                  srcset="./images/team/tablet/img-1.jpg 1x, ./images/team/tablet/img-1@2x.jpg 2x"
+                  media="(min-width: 768px)"
+                />
+                <source
+                  srcset="./images/team/mobile/img-1.jpg 1x, ./images/team/mobile/img-1@2x.jpg 2x"
+                  media="(max-width: 767px)"
+                />
+                <img src="./images/team/desctop/img-1.jpg" alt="фото Демьяненко" />
+              </picture>
               <div class="team__data">
                 <h3 class="team__name">Игорь Демьяненко</h3>
                 <p class="team__pos">Product Designer</p>
@@ -184,7 +227,21 @@
               </div>
             </li>
             <li class="list__item team__item">
-              <img src="./images/team/img2.jpg" alt="фото Репиной" width="270" />
+              <picture>
+                <source
+                  srcset="./images/team/desctop/img-2.jpg 1x, ./images/team/desctop/img-2@2x.jpg 2x"
+                  media="(min-width: 1200px)"
+                />
+                <source
+                  srcset="./images/team/tablet/img-2.jpg 1x, ./images/team/tablet/img-2@2x.jpg 2x"
+                  media="(min-width: 768px)"
+                />
+                <source
+                  srcset="./images/team/mobile/img-2.jpg 1x, ./images/team/mobile/img-2@2x.jpg 2x"
+                  media="(max-width: 767px)"
+                />
+                <img src="./images/team/desctop/img-2.jpg" alt="фото Репиной" />
+              </picture>
               <div class="team__data">
                 <h3 class="team__name">Ольга Репина</h3>
                 <p class="team__pos">Frontend Developer</p>
@@ -222,7 +279,21 @@
               </div>
             </li>
             <li class="list__item team__item">
-              <img src="./images/team/img3.jpg" alt="фото Тарасова" width="270" />
+              <picture>
+                <source
+                  srcset="./images/team/desctop/img-3.jpg 1x, ./images/team/desctop/img-3@2x.jpg 2x"
+                  media="(min-width: 1200px)"
+                />
+                <source
+                  srcset="./images/team/tablet/img-3.jpg 1x, ./images/team/tablet/img-3@2x.jpg 2x"
+                  media="(min-width: 768px)"
+                />
+                <source
+                  srcset="./images/team/mobile/img-3.jpg 1x, ./images/team/mobile/img-3@2x.jpg 2x"
+                  media="(max-width: 767px)"
+                />
+                <img src="./images/team/desctop/img-3.jpg" alt="фото Тарасова" />
+              </picture>
               <div class="team__data">
                 <h3 class="team__name">Николай Тарасов</h3>
                 <p class="team__pos">Marketing</p>
@@ -260,7 +331,21 @@
               </div>
             </li>
             <li class="list__item team__item">
-              <img src="./images/team/img4.jpg" alt="фото Ермакова" width="270" />
+              <picture>
+                <source
+                  srcset="./images/team/desctop/img-4.jpg 1x, ./images/team/desctop/img-4@2x.jpg 2x"
+                  media="(min-width: 1200px)"
+                />
+                <source
+                  srcset="./images/team/tablet/img-4.jpg 1x, ./images/team/tablet/img-4@2x.jpg 2x"
+                  media="(min-width: 768px)"
+                />
+                <source
+                  srcset="./images/team/mobile/img-4.jpg 1x, ./images/team/mobile/img-4@2x.jpg 2x"
+                  media="(max-width: 767px)"
+                />
+                <img src="./images/team/desctop/img-4.jpg" alt="фото Ермакова" />
+              </picture>
               <div class="team__data">
                 <h3 class="team__name">Михаил Ермаков</h3>
                 <p class="team__pos">UI Designer</p>
@@ -299,29 +384,29 @@
             </li>
           </ul>
         </div>
-      </section> -->
+      </section>
       <!-- client section -->
-      <!-- <section class="client">
+      <section class="client">
         <div class="container">
           <h2 class="text">Постоянные клиенты</h2>
-          <ul class="list">
+          <ul class="client__list list">
             <li class="client__item">
               <a class="client__link" href="">
-                <svg class="client__card" width="41" height="46.7">
+                <svg class="client__card" width="82" height="46.7">
                   <use href="./icons/sprite-logo.svg#icon-logo-1"></use>
                 </svg>
               </a>
             </li>
             <li class="client__item">
               <a class="client__link" href="">
-                <svg class="client__card" width="40" height="52">
+                <svg class="client__card" width="80" height="52">
                   <use href="./icons/sprite-logo.svg#icon-logo-2"></use>
                 </svg>
               </a>
             </li>
             <li class="client__item">
               <a class="client__link" href="">
-                <svg class="client__card" width="43.46" height="41.18">
+                <svg class="client__card" width="83.46" height="41.18">
                   <use href="./icons/sprite-logo.svg#icon-logo-3"></use>
                 </svg>
               </a>
@@ -349,10 +434,10 @@
             </li>
           </ul>
         </div>
-      </section> -->
+      </section>
     </main>
     <!-- footer -->
-    <!-- <footer class="footer">
+    <footer class="footer">
       <div class="container footer__container">
         <div class="footer__block">
           <a href="" class="header__studio footer__color link"><span class="header__web">Web</span>Studio</a>
@@ -403,10 +488,10 @@
             </li>
           </ul>
         </div>
-        <div class="">
+        <div class="footer__block">
           <b class="footer__heiding">Подпишитесь на рассылку</b>
           <div class="form">
-            <div class="form-field">
+            <div class="form__field">
               <label class="form__text" for="fmail"></label>
               <input class="form__input" type="email" name="subscription" id="fmail" placeholder="E-mail" />
             </div>
@@ -419,7 +504,7 @@
           </div>
         </div>
       </div>
-    </footer> -->
+    </footer>
     <!-- modal icon -->
     <section class="backdrop is-hidden" data-modal>
       <div class="modal">
@@ -475,5 +560,6 @@
       </div>
     </section>
     <script src="./js/modal.js"></script>
+    <script src="./js/menu.js"></script>
   </body>
 </html>
