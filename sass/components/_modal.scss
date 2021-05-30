@@ -29,6 +29,7 @@
   background-color: $primary-color;
   box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.12), 0px 1px 1px rgba(0, 0, 0, 0.14), 0px 2px 1px rgba(0, 0, 0, 0.2);
   border-radius: 4px;
+
   @media screen and (min-width: $mobile) {
     width: 450px;
     min-width: auto;
@@ -172,15 +173,20 @@
   // margin-left: 2px;
   color: $accent-text-color;
 }
+@media screen and (max-width: 767.99px) {
+  .modal {
+    margin: 0px auto;
+  }
+}
 @media screen and (min-width: $tablet) {
   .modal {
-    margin: 205px auto;
+    margin: 0px auto;
   }
 }
 @media screen and (min-width: $desktop) {
   .modal {
     width: 528px;
-    margin: 220px auto;
+    margin: 0px auto;
   }
   .modal__heiding {
     line-height: 1.15;

@@ -1245,16 +1245,22 @@ body.menu__cotainer.is-open {
   color: #2196f3;
 }
 
+@media screen and (max-width: 767.99px) {
+  .modal {
+    margin: 0px auto;
+  }
+}
+
 @media screen and (min-width: 768px) {
   .modal {
-    margin: 205px auto;
+    margin: 0px auto;
   }
 }
 
 @media screen and (min-width: 1200px) {
   .modal {
     width: 528px;
-    margin: 220px auto;
+    margin: 0px auto;
   }
   .modal__heiding {
     line-height: 1.15;
